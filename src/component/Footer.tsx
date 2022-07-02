@@ -12,6 +12,7 @@ const Footer = () => {
             <a className="nav-link  text-light mx-3" href="/more">- More -</a>
           </li>
         </ul>
+        <span>Powered by GIPHY</span>
       </nav>   
   )
 }
