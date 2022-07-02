@@ -1,4 +1,0 @@
-1. npx create-react-app funniest_dog --template typescript
-2. cd funniest_dog
-3. code .
-4. in package.json, add "start:api": node server, in script
