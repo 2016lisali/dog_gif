@@ -10,6 +10,10 @@
   The purpose of this project is to practice with TypeScript
 </h3>
 
+## Demo
+
+The demo can be found on [https://funniestdog.netlify.app](https://funniestdog.netlify.app)
+
 ## Road Map
 
 - [ ] In home page, add 'Vote' function

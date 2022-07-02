@@ -25,17 +25,17 @@ const Home = () => {
   return (
     <div className="main-container">
       <div className="text-light pb-3">
-        <h1 className="text-center">Which dog is funnier?</h1>
+        <h1 className="text-center text-warning">Which dog is funnier?</h1>
       </div>
       <div className="d-flex flex-column flex-sm-row align-items-center justify-content-center">
       <div className="d-flex flex-column align-items-center">
         <img src={`./assets/${dog1}.webp`} alt={`Dog${dog1}`}/>
-        <button className="btn btn-light mt-3" onClick={()=>handleClick(dog1)}>Funnier</button>
+        <button className="btn btn-outline-warning mt-3" onClick={()=>handleClick(dog1)}>Funnier</button>
       </div>
       <div className="text-warning fs-2 px-5">VS</div>
       <div className="d-flex flex-column align-items-center">
       <img src={`./assets/${dog2}.webp`} alt={`Dog${dog2}`}/>
-      <button className="btn btn-light mt-3" onClick={()=>handleClick(dog2)}>Funnier</button>
+      <button className="btn btn-outline-warning mt-3" onClick={()=>handleClick(dog2)}>Funnier</button>
       </div>
       </div>
     </div>
