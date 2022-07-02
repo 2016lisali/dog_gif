@@ -1,26 +1,30 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 
 const Home = () => {
   const [dog1, setDog1] = useState(1);
   const [dog2, setDog2] = useState(2);
   const MAX_DEX_ID = 30;
-  const getRandomDog = (notThisOne?:number): number => {
+
+  const getRandomDog = useCallback(
+  (notThisOne?:number): number => {
     const dogDexNumber = Math.floor(Math.random()*(MAX_DEX_ID-1)+1)
     if (dogDexNumber !== notThisOne) return dogDexNumber;
     return getRandomDog(notThisOne)
-  }
+  },[])
+
   const handleClick = (dexNumber:number) => {
     setDog1(getRandomDog());
     setDog2(getRandomDog(dog1)); 
   }
+
   useEffect(() => {
     setDog1(getRandomDog());
     setDog2(getRandomDog(dog1)); 
-  },[])
+  },[getRandomDog, dog1])
   
   return (
     <div className="main-container">
-      <div className="text-light py-3">
+      <div className="text-light pb-3">
         <h1 className="text-center">Which dog is funnier?</h1>
       </div>
       <div className="d-flex flex-column flex-sm-row align-items-center justify-content-center">

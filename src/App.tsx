@@ -7,7 +7,7 @@ import Footer from './component/Footer';
 
 function App() {
   return (
-    <div className="App d-flex flex-column justify-content-center align-items-center">
+    <div className="App d-flex flex-column justify-content-center align-items-center vh-100 ">
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -15,8 +15,7 @@ function App() {
           <Route path="/more" element={<MoreDogs />} />
         </Routes>
         <Footer />
-      </Router>
-      
+      </Router>     
     </div>
   );
 }

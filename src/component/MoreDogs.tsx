@@ -4,25 +4,24 @@ import { IDog } from "./IDog";
 
 const MoreDogs = () => {
   const [dogs, setDogs] = useState<IDog[]>([]);
-  const [currentDog, setCurrentDog] = useState<IDog>();
-  const api_key = "hVcl0kcsICmpsN3hwuOrNUTB5nG7eKlc"
-  const base_url = "https://api.giphy.com/v1/gifs/search"
+  const API_KEY = process.env.REACT_APP_API_KEY
+  const BASE_URL = "https://api.giphy.com/v1/gifs/search"
+console.log("api_key", API_KEY);
 
   useEffect(() => {
     const getDogs = async ():Promise<any> => {
-       fetch(`${base_url}?api_key=${api_key}&q=dog&limit=24`)
+       fetch(`${BASE_URL}?api_key=${API_KEY}&q=dog&limit=24`)
         .then(result=>result.json())
         .then(result=>{
           setDogs(result.data)
-          setCurrentDog(result.data[0])
         })
     }
     getDogs();
-  }, [])
+  }, [API_KEY])
   console.log("dogs", dogs);
   
   return (
-    <div className="vh-100 d-flex align-items-center">
+    <div className="d-flex align-items-center">
     <DogCarousel dogs={dogs} />
     </div>
   )
